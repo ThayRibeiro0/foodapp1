@@ -26,7 +26,7 @@ const ProductPage = async ({ params: { id } }: ProductPageProps) => {
   const juices = await db.product.findMany({
     where: {
       category: {
-        name: "🥤 Juices",
+        name: "Juices",
       },
       restaurant: {
         id: product?.restaurant.id,

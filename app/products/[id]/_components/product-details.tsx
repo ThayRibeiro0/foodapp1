@@ -42,15 +42,15 @@ const ProductDetails = ({
     });
 
   return (
-    <div className="relative z-50 mt-[-1.5rem] rounded-tl-3xl rounded-tr-3xl bg-[#89d4ed] py-5">
+    <div className="z-1 relative mt-[-1.5rem] rounded-t-full rounded-se-full bg-gradient-to-r from-pink-200 to-white py-5">
       {/* RESTAURANTE */}
-      <div className="flex items-center gap-[0.375rem] px-5">
+      <div className="flex items-center justify-center gap-[0.375rem] px-5">
         <div className="relative h-6 w-6">
           <Image
             src={product.restaurant.imageUrl}
             alt={product.restaurant.name}
             fill
-            className="rounded-full object-cover"
+            className="rounded-full object-cover "
           />
         </div>
         <span className="text-xs text-muted-foreground">
@@ -59,10 +59,36 @@ const ProductDetails = ({
       </div>
 
       {/* NOME DO PRODUTO */}
-      <h1 className="mb-2 mt-1 px-5 text-xl font-semibold">{product.name}</h1>
+      <h1 className="mb-2 mt-1 flex justify-center px-5 text-xl font-semibold shadow">
+        {product.name}
+      </h1>
 
-      {/* PREÇO DO PRODUTO E QUANTIDADE */}
-      <div className="flex justify-between px-5">
+      <div className="mb-5 px-8 md:px-20">
+        <DeliveryInfo restaurant={product.restaurant} />
+      </div>
+
+      {/* QUANTIDADE E PREÇO DO PRODUTO*/}
+      <div className="flex justify-around px-5">
+        {/* QUANTIDADE */}
+        <div className="flex items-center gap-3 text-center">
+          <Button
+            size="icon"
+            variant="ghost"
+            className="border border-solid border-muted-foreground"
+            onClick={handleDecreaseQuantityClick}
+          >
+            <ChevronLeftIcon />
+          </Button>
+          <span className="w-4">{quantity}</span>
+          <Button
+            className="col-span-1 flex-initial bg-pink-300 hover:bg-lime-400"
+            size="icon"
+            onClick={handleIncreaseQuantityClick}
+          >
+            <ChevronRightIcon />
+          </Button>
+        </div>
+
         {/* PREÇO COM DESCONTO */}
         <div>
           <div className="flex items-center gap-2">
@@ -76,45 +102,27 @@ const ProductDetails = ({
 
           {/* PREÇO ORIGINAL */}
           {product.discountPercentage > 0 && (
-            <p className="text-sm text-muted-foreground">
-              De: {formatCurrency(Number(product.price))}
+            <p className="text-sm text-muted-foreground line-through">
+              From: {formatCurrency(Number(product.price))}
             </p>
           )}
         </div>
-
-        {/* QUANTIDADE */}
-        <div className="flex items-center gap-3 text-center">
-          <Button
-            size="icon"
-            variant="ghost"
-            className="border border-solid border-muted-foreground"
-            onClick={handleDecreaseQuantityClick}
-          >
-            <ChevronLeftIcon />
-          </Button>
-          <span className="w-4">{quantity}</span>
-          <Button size="icon" onClick={handleIncreaseQuantityClick}>
-            <ChevronRightIcon />
-          </Button>
-        </div>
-      </div>
-
-      <div className="px-5">
-        <DeliveryInfo restaurant={product.restaurant} />
       </div>
 
       <div className="mt-6 space-y-3 px-5">
-        <h3 className="font-semibold">🤔 About</h3>
+        <h3 className="flex justify-center font-semibold">🤔 About</h3>
         <p className="text-sm text-muted-foreground">{product.description}</p>
       </div>
 
       <div className="mt-6 space-y-3">
-        <h3 className="px-5 font-semibold">🥤 Juices</h3>
+        <h3 className="flex justify-center px-5 font-semibold">🥤 Juices</h3>
         <ProductList products={complementaryProducts} />
       </div>
 
-      <div className="mt-6 px-5">
-        <Button className="w-full font-semibold">🛒 Add to Cart</Button>
+      <div className="mt-6 flex justify-center px-5">
+        <Button className="w-50  bg-lime-300 font-semibold text-rose-500 hover:text-lime-300">
+          🛒 Add to Cart
+        </Button>
       </div>
     </div>
   );
