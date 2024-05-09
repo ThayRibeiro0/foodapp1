@@ -267,7 +267,8 @@ const nextConfig = {
     },
   };
 export default nextConfig;
-  
+
+helping in setup of code: 'Simple React Snippets'
 
 Command identification:
 - Windows: Shift + Alt + F

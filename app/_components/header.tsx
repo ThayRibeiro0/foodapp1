@@ -20,9 +20,9 @@ const Header = () => {
       <Button
         size="icon"
         variant="ghost"
-        className="rounded-md border-none bg-transparent p-2"
+        className="rounded-md border-none bg-transparent p-2 hover:bg-white md:cursor-pointer"
       >
-        <MenuIcon />
+        <MenuIcon className="bg-transparent" />
       </Button>
     </div>
   );
