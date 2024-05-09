@@ -32,7 +32,11 @@ const Search = () => {
         onChange={handleChange}
         value={search}
       />
-      <Button size="icon" type="submit">
+      <Button
+        className="bg-red-200 text-red-900 hover:text-white"
+        size="icon"
+        type="submit"
+      >
         <SearchIcon size={20} />
       </Button>
     </form>

@@ -259,16 +259,18 @@ the code:
 To commit first you can move the files to the staged changes and check at the terminal the status of each documents with:
   - 'git status'
 
-fixing the utfs.io:
+Fixing the utfs.io at the file next.config.mjs to find we can use 'command + p' and type the name of the file:
 - /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-      domains: ['utfs.io'],
+      remotePatterns: [{ hostname: "utfs.io" }],
     },
   };
-export default nextConfig;
+  export default nextConfig;
 
 helping in setup of code: 'Simple React Snippets'
+
+update lib in app with 'prisma.ts'
 
 Command identification:
 - Windows: Shift + Alt + F
