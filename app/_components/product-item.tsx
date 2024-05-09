@@ -23,11 +23,11 @@ interface ProductItemProps {
 const ProductItem = ({ product, className }: ProductItemProps) => {
   return (
     <Link
-      className={cn("w-[180px] min-w-[180px]", className)}
+      className={cn("w-[150px] min-w-[150px]", className)}
       href={`/products/${product.id}`}
     >
       <div className="w-full space-y-2">
-        <div className="relative aspect-square h-[100px] w-full">
+        <div className="relative aspect-square h-[100px] w-full shadow-md">
           <Image
             src={product.imageUrl}
             alt={product.name}
@@ -36,7 +36,7 @@ const ProductItem = ({ product, className }: ProductItemProps) => {
           />
 
           {product.discountPercentage && (
-            <div className="absolute left-2 top-2 flex items-center gap-[2px] rounded-full bg-primary px-2 py-[2px] text-white">
+            <div className="absolute left-2 top-2 flex items-center gap-[2px] rounded-full bg-green-200 px-2 py-[2px] text-red-600">
               <ArrowDownIcon size={12} />
               <span className="text-xs font-semibold">
                 {product.discountPercentage}%
