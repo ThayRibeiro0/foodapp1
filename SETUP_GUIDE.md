@@ -210,9 +210,13 @@ from the stage that the project it was edited. After this create a file
 - File name: 'lintstagedrc.json'
 
 and inside we insert the data: 
-  - { 
-      "*.ts?(x)": [":eslint --fix:", "prettier --write"]
-    }
+  - {
+  "*.ts?(x)": [
+    "eslint --fix",
+    "prettier --write"
+  ]
+}
+
     
 Then this we get all the files of the commit and run what its necessary before it. To test it we can create a variable to the page.tsx to the eslint show a error because of this, after at the eslint file add rules: 
 
