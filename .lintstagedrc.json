@@ -3,5 +3,5 @@
         "eslint --fix",
         "prettier --write"
       ]
-    }
+}
     
