@@ -234,7 +234,9 @@ installed at the vsCode and it will show the error.
 ### Conventional Commits
 Website: https://www.conventionalcommits.org/en/v1.0.0/
 We can create a git hook to verify if the message of the commit its compatible with this conventional commits to do this we can use the lib _git-commit-msg-linter_ that will make this verification automatically and to install we use: 
+
 - 'npm i git-commit-msg-linter'
+- 'npm list eslint'
 
 and to use it we need to get crtl + f to find at the page _Work With Husky 5_ and copy and pasta at a file at the husky folder together with pre-commit called 
 
