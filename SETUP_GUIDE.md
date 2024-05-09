@@ -258,7 +258,17 @@ the code:
 
 To commit first you can move the files to the staged changes and check at the terminal the status of each documents with:
   - 'git status'
+
+fixing the utfs.io:
+- /** @type {import('next').NextConfig} */
+const nextConfig = {
+    images: {
+      domains: ['utfs.io'],
+    },
+  };
+export default nextConfig;
   
+
 Command identification:
 - Windows: Shift + Alt + F
 - On Mac: Shift + Option + F
