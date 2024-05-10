@@ -58,7 +58,7 @@ const RestaurantPage = async ({ params: { id } }: RestaurantPageProps) => {
     <div>
       <RestaurantImage restaurant={restaurant} />
 
-      <div className="relative z-50 mt-[-1.5rem] flex items-center justify-between rounded-tl-3xl rounded-tr-3xl bg-white px-5 pt-5">
+      <div className="relative z-50 mt-[-1.5rem] flex items-center justify-between rounded-tl-3xl rounded-tr-3xl bg-gradient-to-r from-pink-200 to-white px-5 pb-5 pt-5 shadow">
         {/* TITULO */}
         <div className="flex items-center gap-[0.375rem]">
           <div className="relative h-8 w-8">
@@ -82,11 +82,11 @@ const RestaurantPage = async ({ params: { id } }: RestaurantPageProps) => {
         <DeliveryInfo restaurant={restaurant} />
       </div>
 
-      <div className="mt-3 flex gap-4 overflow-x-scroll px-5 [&::-webkit-scrollbar]:hidden">
+      <div className="mt-5 flex gap-4 overflow-x-scroll px-4 [&::-webkit-scrollbar]:hidden">
         {restaurant.categories.map((category) => (
           <div
             key={category.id}
-            className="min-w-[167px] rounded-lg bg-[#F4F4F4] text-center"
+            className="min-w-[130px] rounded-lg bg-[#F4F4F4] text-center"
           >
             <span className="text-xs text-muted-foreground">
               {category.name}
